@@ -6,9 +6,22 @@ use eftec\bladeone\BladeOne;
 
 class Controllers
 {   
-    public function renderView($view, $data = []) {
-        $templatePath = __DIR__ . '/../Views';
-        $compiledPath = __DIR__ . '/../Views/cache';
+    public function renderViewClient($view, $data = []) {
+        $templatePath = __DIR__ . '/../Views/Client';
+        $compiledPath = __DIR__ . '/../../dump';
+
+        try {
+            $blade = new BladeOne($templatePath, $compiledPath);
+            echo $blade->run($view, $data);
+        } catch (\Exception $e) {
+            // Handle rendering errors
+            echo "Error rendering view: " . $e->getMessage();
+        }
+    }
+
+    public function renderViewAdmin($view, $data = []) {
+        $templatePath = __DIR__ . '/../Views/Admin';
+        $compiledPath = __DIR__ . '/../../dump';
 
         try {
             $blade = new BladeOne($templatePath, $compiledPath);
