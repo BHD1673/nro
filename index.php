@@ -9,4 +9,4 @@ require 'vendor/autoload.php';
 
 // This aint nothing much to see in this file.
 
-require "src/Http/Route.php";
+require "routes/index.php";
