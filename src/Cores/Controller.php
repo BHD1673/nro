@@ -4,7 +4,7 @@ namespace Admin\Backend\Cores;
 
 use eftec\bladeone\BladeOne;
 
-class Controllers
+class Controller
 {   
     public function renderViewClient($view, $data = []) {
         $templatePath = __DIR__ . '/../Views/Client';
