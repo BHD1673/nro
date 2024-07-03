@@ -1,0 +1,63 @@
+#account{width: 804px; height: 533px; background: url(../../../../../../20190827213520im_/https_/ngocrongvn.com/frontend/styles/images/account/bg-account.png) no-repeat top left;}
+.block-popup-account{margin-top: 198px; margin-left: 82px; width: 722px; height: 319px; float: left;}
+#account .title{height: 40px; float: left; width: 100%}
+#account .title ul{width: 100%; float: left;}
+#account .title ul li{float: left; width: 186px;}
+#account .title ul li:first-child{text-indent: 85px}
+#account .title ul li a{font-size: 14px; font-family: "Arial"; color: rgb(94, 69, 46); line-height: 2.346; }
+#account .title ul li a.active{font-weight: bold; }
+#account .tab-account { float: left; margin-left: 12px;}
+#account .tab-account input {height: 46px; line-height: 46px; outline: none; font-size: 16px; padding: 0px 10px; border-width: 1px; border-color: rgb(168, 137, 64); border-style: solid; background-color: rgb(255, 255, 255); width: 335px; color: #a88940}
+.tab-account div label{    width: 143px; font-family: "MyriadPro"; font-size: 13px;
+    float: left;
+    line-height: 32px;
+}
+#account .tab-account input.chx{width: 13px;height: 13px;margin-top: 8px;float: left;}
+#account .tab-account p.note{color: #b3f0f9; font-size: 13px; float: left; line-height: 28px;width: 200px;margin: 0 0 0 6px;}
+#account .tab-account p.n2{color: #ff2626; font-size: 13px; text-align: center; line-height: 25px; height: 25px; margin: 2px 0px;}
+#account .tab-account p.note a{white-space: nowrap;color: #b3f0f9;}
+#account .tab-account p.note a:hover{color: #0019C2;}
+#account .tab-account p.notice { margin: 0; color: red; font-size: 13px; padding: 6px 0}
+#account #btn-login, #account #btn-regisnew{background: url(../../../../../../20190723184813im_/https_/ngocrongvn.com/frontend/styles/images/account/btn-login.html) no-repeat; margin-left: 14%; height: 54px; width: 159px; display: block; float: left; }
+/*
+#account .tab-account .social{margin: 0 auto;text-align: center;}
+#account .tab-account .social a{display: inline-block;vertical-align: top;zoom: 1; 
+display: inline;width: 30px;height: 30px; margin: 0px 5px;}
+#account .tab-account .social a.fb{background: url(/web/20190723184813im_/https://ngocrongvn.com/frontend/styles/images/account/fb.png)no-repeat;}
+#account .tab-account .social a.gg{background: url(/web/20190723184813im_/https://ngocrongvn.com/frontend/styles/images/account/gg.png)no-repeat;}
+#account .tab-account .social a.yh{background: url(/web/20190723184813im_/https://ngocrongvn.com/frontend/styles/images/account/yh.png)no-repeat;}
+#account .tab-account .social a:hover{background-position: 0px -30px;}
+*/
+.q-mk { display: block; font-family: "MyriadPro";
+    color: #ef3d2a;
+    font-size: 13px;
+    text-decoration: none;
+    margin-left: 145px;
+    margin-bottom: 7px;
+    width: 90px;
+    float: left;
+    line-height: 18px;
+}
+
+.icon-next{background: url(../../../../../../20190827213800im_/https_/ngocrongvn.com/frontend/styles/images/intro/icon-next.html) no-repeat top left; height: 9px; width: 9px; display: inline-block;}
+
+/*
+     FILE ARCHIVED ON 18:48:13 Jul 23, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:56:28 Jun 23, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.63
+  exclusion.robots: 0.075
+  exclusion.robots.policy: 0.063
+  esindex: 0.011
+  cdx.remote: 23.933
+  LoadShardBlock: 180.803 (3)
+  PetaboxLoader3.datanode: 151.789 (4)
+  PetaboxLoader3.resolve: 76.033 (2)
+  load_resource: 141.051
+*/
