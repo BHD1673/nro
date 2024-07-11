@@ -51,7 +51,7 @@ $router->mount('/admin', function () use ($router) {
     $router->mount('/danh-muc', function() use ($router) {
         $router->get('/trang/{id}',                                             CategoryController::class . '@index');             // Hiển thị danh sách danh mục
         $router->post('/them-moi',                                              CategoryController::class . '@create');            // Xử lý dữ liệu vào database
-        $router->get('/sua/{id}',                                               CategoryController::class . '@editFetch');         // Hiển thị form để sửa dữ liệu
+        $router->get('/chi-tiet/{id}',                                          CategoryController::class . '@editFetch');         // Hiển thị form để sửa dữ liệu
         $router->post('/cap-nhat/{id}',                                         CategoryController::class . '@editPost');          // Gửi dữ liệu sửa
         $router->get('/xoa/{id}',                                               CategoryController::class . '@delete');            // Xoá dữ liệu
     });
