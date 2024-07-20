@@ -3,21 +3,21 @@
             <!-- LOGO -->
             <div class="navbar-brand-box">
                 <!-- Dark Logo-->
-                <a href="index.html" class="logo logo-dark">
+                <a href="/admin" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/admin/images/logo-sm.png" alt="" height="22">
+                        <img src="{{ asset('assets/admin/images/logo-sm.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/admin/images/logo-dark.png" alt="" height="17">
+                        <img src="{{ asset('assets/admin/images/logo-dark.png') }}" alt="" height="17">
                     </span>
                 </a>
                 <!-- Light Logo-->
-                <a href="index.html" class="logo logo-light">
+                <a href="/admin" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/admin/images/logo-sm.png" alt="" height="22">
+                        <img src="{{ asset('assets/admin/images/logo-sm.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/admin/images/logo-light.png" alt="" height="17">
+                        <img src="{{ asset('assets/admin/images/logo-light.png') }}" alt="" height="17">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -39,7 +39,7 @@
                             <div class="collapse menu-dropdown" id="sidebarDashboards">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="/admin/thong-ke" class="nav-link" data-key="t-analytics"> Thống kê chi tiết </a>
+                                        <a href="/admin/" class="nav-link" data-key="t-analytics"> Thống kê chi tiết </a>
                                     </li>
                                 </ul>
                             </div>
@@ -58,11 +58,7 @@
                                         <div class="collapse menu-dropdown" id="sidebarSignIn">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="auth-signin-basic.html" class="nav-link" data-key="t-basic"> Thêm mới
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="auth-signin-cover.html" class="nav-link" data-key="t-cover"> Xem danh sách
+                                                    <a href="{{url('admin/danh-muc/trang/1')}}" class="nav-link" data-key="t-cover"> Xem danh sách
                                                     </a>
                                                 </li>
                                             </ul>
@@ -74,11 +70,11 @@
                                     <div class="collapse menu-dropdown" id="sidebarProfile">
                                         <ul class="nav nav-sm flex-column">
                                             <li class="nav-item">
-                                                <a href="pages-profile.html" class="nav-link" data-key="t-simple-page">
+                                                <a href="{{url('admin/bai-viet/them-moi')}}" class="nav-link" data-key="t-simple-page">
                                                    Thêm bài viết mới </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="pages-profile-settings.html" class="nav-link" data-key="t-settings"> Xem danh sách bài viết </a>
+                                                <a href="{{url('admin/bai-viet/trang/1')}}" class="nav-link" data-key="t-settings"> Xem danh sách bài viết </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -89,7 +85,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarIcons">
+                            <a class="nav-link menu-link" href="{{url('admin/seo')}}">
                                 <i class="ri-compasses-2-line"></i> <span data-key="t-icons">SEO</span>
                             </a>
 
@@ -101,17 +97,17 @@
                             <div class="collapse menu-dropdown" id="sidebarMaps">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="maps-google.html" class="nav-link" data-key="t-google">
+                                        <a href="{{url('admin/nap-the-cao')}}" class="nav-link" data-key="t-google">
                                             Nạp thẻ cào
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="maps-vector.html" class="nav-link" data-key="t-vector">
+                                        <a href="{{url('admin/nap-atm')}}" class="nav-link" data-key="t-vector">
                                             Nạp ATM
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="maps-leaflet.html" class="nav-link" data-key="t-leaflet">
+                                        <a href="{{url('admin/bien-dong-giao-dich')}}" class="nav-link" data-key="t-leaflet">
                                             Biến dộng giao dịch
                                         </a>
                                     </li>

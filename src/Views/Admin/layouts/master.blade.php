@@ -9,26 +9,48 @@
     @include('layouts.partials.seo')
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/admin/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/admin/images/favicon.ico') }}">
 
     <!-- jsvectormap css -->
-    <link href="assets/admin/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/admin/libs/jsvectormap/css/jsvectormap.min.css') }}" rel="stylesheet" type="text/css" />
 
     <!--Swiper slider css-->
-    <link href="assets/admin/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/admin/libs/swiper/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
 
     <!-- Layout config Js -->
-    <script src="assets/admin/js/layout.js"></script>
+    <script src="{{ asset('assets/admin/js/layout.js') }}"></script>
     <!-- Bootstrap Css -->
-    <link href="assets/admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Icons Css -->
-    <link href="assets/admin/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/admin/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="assets/admin/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/admin/css/app.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="assets/admin/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/admin/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Ensure the custom fonts are recognized by the editor */
+        .ql-font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+        .ql-font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+        .ql-font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .ql-font-lato {
+            font-family: 'Lato', sans-serif;
+        }
+        .ql-font-raleway {
+            font-family: 'Raleway', sans-serif;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,21 +64,21 @@
                     <div class="d-flex">
                         <!-- LOGO -->
                         <div class="navbar-brand-box horizontal-logo">
-                            <a href="index.html" class="logo logo-dark">
+                            <a href="/admin" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="assets/admin/images/logo-sm.png" alt="" height="22">
+                                    <img src="{{ asset('assets/admin/images/logo-sm.png') }}" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="assets/admin/images/logo-dark.png" alt="" height="17">
+                                    <img src="{{ asset('assets/admin/images/logo-dark.png') }}" alt="" height="17">
                                 </span>
                             </a>
 
-                            <a href="index.html" class="logo logo-light">
+                            <a href="/admin" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="assets/admin/images/logo-sm.png" alt="" height="22">
+                                    <img src="{{ asset('assets/admin/images/logo-sm.png') }}" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="assets/admin/images/logo-light.png" alt="" height="17">
+                                    <img src="{{ asset('assets/admin/images/logo-light.png') }}" alt="" height="17">
                                 </span>
                             </a>
                         </div>
@@ -86,8 +108,8 @@
                             </div>
 
                             <div class="dropdown-item bg-transparent text-wrap">
-                                <a href="index.html" class="btn btn-soft-secondary btn-sm rounded-pill">how to setup <i class="mdi mdi-magnify ms-1"></i></a>
-                                <a href="index.html" class="btn btn-soft-secondary btn-sm rounded-pill">buttons <i class="mdi mdi-magnify ms-1"></i></a>
+                                <a href="/admin" class="btn btn-soft-secondary btn-sm rounded-pill">how to setup <i class="mdi mdi-magnify ms-1"></i></a>
+                                <a href="/admin" class="btn btn-soft-secondary btn-sm rounded-pill">buttons <i class="mdi mdi-magnify ms-1"></i></a>
                             </div>
                             <!-- item-->
                             <div class="dropdown-header mt-2">
@@ -95,19 +117,19 @@
                             </div>
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item">
                                 <i class="ri-bubble-chart-line align-middle fs-18 text-muted me-2"></i>
                                 <span>Analytics Dashboard</span>
                             </a>
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item">
                                 <i class="ri-lifebuoy-line align-middle fs-18 text-muted me-2"></i>
                                 <span>Help Center</span>
                             </a>
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item">
                                 <i class="ri-user-settings-line align-middle fs-18 text-muted me-2"></i>
                                 <span>My account settings</span>
                             </a>
@@ -119,9 +141,9 @@
 
                             <div class="notification-list">
                                 <!-- item -->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item py-2">
                                     <div class="d-flex">
-                                        <img src="assets/admin/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <img src="{{ asset('assets/admin/images/users/avatar-2.jpg') }}" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="m-0">Angela Bernier</h6>
                                             <span class="fs-11 mb-0 text-muted">Manager</span>
@@ -129,9 +151,9 @@
                                     </div>
                                 </a>
                                 <!-- item -->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item py-2">
                                     <div class="d-flex">
-                                        <img src="assets/admin/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <img src="{{ asset('assets/admin/images/users/avatar-3.jpg') }}" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="m-0">David Grasso</h6>
                                             <span class="fs-11 mb-0 text-muted">Web Designer</span>
@@ -139,9 +161,9 @@
                                     </div>
                                 </a>
                                 <!-- item -->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item py-2">
                                     <div class="d-flex">
-                                        <img src="assets/admin/images/users/avatar-5.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <img src="{{ asset('assets/admin/images/users/avatar-5.jpg') }}" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="m-0">Mike Bunch</h6>
                                             <span class="fs-11 mb-0 text-muted">React Developer</span>
@@ -152,7 +174,7 @@
                         </div>
 
                         <div class="text-center pt-3 pb-1">
-                            <a href="pages-search-results.html" class="btn btn-primary btn-sm">View All Results <i class="ri-arrow-right-line ms-1"></i></a>
+                            <a href="{{ asset('pages-search-results.html') }}" class="btn btn-primary btn-sm">View All Results <i class="ri-arrow-right-line ms-1"></i></a>
                         </div>
                     </div>
                 </form> --}}
@@ -183,54 +205,54 @@
 
                         {{-- <div class="dropdown ms-1 topbar-head-dropdown header-item">
                     <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img id="header-lang-img" src="assets/admin/images/flags/us.svg" alt="Header Language" height="20" class="rounded">
+                        <img id="header-lang-img" src="{{ asset('assets/admin/images/flags/us.svg') }}" alt="Header Language" height="20" class="rounded">
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language py-2" data-lang="en" title="English">
-                            <img src="assets/admin/images/flags/us.svg" alt="user-image" class="me-2 rounded" height="18">
+                        <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item language py-2" data-lang="en" title="English">
+                            <img src="{{ asset('assets/admin/images/flags/us.svg') }}" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">English</span>
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp" title="Spanish">
-                            <img src="assets/admin/images/flags/spain.svg" alt="user-image" class="me-2 rounded" height="18">
+                        <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item language" data-lang="sp" title="Spanish">
+                            <img src="{{ asset('assets/admin/images/flags/spain.svg') }}" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">Española</span>
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr" title="German">
-                            <img src="assets/admin/images/flags/germany.svg" alt="user-image" class="me-2 rounded" height="18"> <span class="align-middle">Deutsche</span>
+                        <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item language" data-lang="gr" title="German">
+                            <img src="{{ asset('assets/admin/images/flags/germany.svg') }}" alt="user-image" class="me-2 rounded" height="18"> <span class="align-middle">Deutsche</span>
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it" title="Italian">
-                            <img src="assets/admin/images/flags/italy.svg" alt="user-image" class="me-2 rounded" height="18">
+                        <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item language" data-lang="it" title="Italian">
+                            <img src="{{ asset('assets/admin/images/flags/italy.svg') }}" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">Italiana</span>
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru" title="Russian">
-                            <img src="assets/admin/images/flags/russia.svg" alt="user-image" class="me-2 rounded" height="18">
+                        <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item language" data-lang="ru" title="Russian">
+                            <img src="{{ asset('assets/admin/images/flags/russia.svg') }}" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">русский</span>
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ch" title="Chinese">
-                            <img src="assets/admin/images/flags/china.svg" alt="user-image" class="me-2 rounded" height="18">
+                        <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item language" data-lang="ch" title="Chinese">
+                            <img src="{{ asset('assets/admin/images/flags/china.svg') }}" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">中国人</span>
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="fr" title="French">
-                            <img src="assets/admin/images/flags/french.svg" alt="user-image" class="me-2 rounded" height="18">
+                        <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item language" data-lang="fr" title="French">
+                            <img src="{{ asset('assets/admin/images/flags/french.svg') }}" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">français</span>
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ar" title="Arabic">
-                            <img src="assets/admin/images/flags/ae.svg" alt="user-image" class="me-2 rounded" height="18">
+                        <a href="{{ asset('javascript:void(0);') }}" class="dropdown-item notify-item language" data-lang="ar" title="Arabic">
+                            <img src="{{ asset('assets/admin/images/flags/ae.svg') }}" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">Arabic</span>
                         </a>
                     </div>
@@ -247,7 +269,7 @@
                                     <h6 class="m-0 fw-semibold fs-15"> Web Apps </h6>
                                 </div>
                                 <div class="col-auto">
-                                    <a href="#!" class="btn btn-sm btn-soft-info"> View All Apps
+                                    <a href="{{ asset('#!') }}" class="btn btn-sm btn-soft-info"> View All Apps
                                         <i class="ri-arrow-right-s-line align-middle"></i></a>
                                 </div>
                             </div>
@@ -256,20 +278,20 @@
                         <div class="p-2">
                             <div class="row g-0">
                                 <div class="col">
-                                    <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/admin/images/brands/github.png" alt="Github">
+                                    <a class="dropdown-icon-item" href="{{ asset('#!') }}">
+                                        <img src="{{ asset('assets/admin/images/brands/github.png') }}" alt="Github">
                                         <span>GitHub</span>
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/admin/images/brands/bitbucket.png" alt="bitbucket">
+                                    <a class="dropdown-icon-item" href="{{ asset('#!') }}">
+                                        <img src="{{ asset('assets/admin/images/brands/bitbucket.png') }}" alt="bitbucket">
                                         <span>Bitbucket</span>
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/admin/images/brands/dribbble.png" alt="dribbble">
+                                    <a class="dropdown-icon-item" href="{{ asset('#!') }}">
+                                        <img src="{{ asset('assets/admin/images/brands/dribbble.png') }}" alt="dribbble">
                                         <span>Dribbble</span>
                                     </a>
                                 </div>
@@ -277,20 +299,20 @@
 
                             <div class="row g-0">
                                 <div class="col">
-                                    <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/admin/images/brands/dropbox.png" alt="dropbox">
+                                    <a class="dropdown-icon-item" href="{{ asset('#!') }}">
+                                        <img src="{{ asset('assets/admin/images/brands/dropbox.png') }}" alt="dropbox">
                                         <span>Dropbox</span>
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/admin/images/brands/mail_chimp.png" alt="mail_chimp">
+                                    <a class="dropdown-icon-item" href="{{ asset('#!') }}">
+                                        <img src="{{ asset('assets/admin/images/brands/mail_chimp.png') }}" alt="mail_chimp">
                                         <span>Mail Chimp</span>
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/admin/images/brands/slack.png" alt="slack">
+                                    <a class="dropdown-icon-item" href="{{ asset('#!') }}">
+                                        <img src="{{ asset('assets/admin/images/brands/slack.png') }}" alt="slack">
                                         <span>Slack</span>
                                     </a>
                                 </div>
@@ -315,7 +337,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="mt-2 text-center">
-                            <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
+                            <lord-icon src="{{ asset('https://cdn.lordicon.com/gsqxdxog.json') }}" trigger="loop"
                                 colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
                             <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
                                 <h4>Are you sure ?</h4>
@@ -394,29 +416,39 @@
 
     @include('layouts.components.customizer')
 
+    <div class="customizer-setting d-none d-md-block" datasqstyle="{&quot;top&quot;:null}" datasquuid="a072962d-b91e-41ae-a666-e442ce00f51c" style="top: 862px;" datasqtop="862">
+        <div class="btn-info rounded-pill shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
+            <i class="mdi mdi-spin mdi-cog-outline fs-22"></i>
+        </div>
+    </div>
+
     <!-- JAVASCRIPT -->
-    <script src="assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/admin/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/admin/libs/node-waves/waves.min.js"></script>
-    <script src="assets/admin/libs/feather-icons/feather.min.js"></script>
-    <script src="assets/admin/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="assets/admin/js/plugins.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets/admin/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/libs/node-waves/waves.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/libs/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/pages/plugins/lord-icon-2.1.0.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/plugins.js') }}"></script>
 
     <!-- apexcharts -->
-    <script src="assets/admin/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="{{ asset('assets/admin/libs/apexcharts/apexcharts.min.js') }}"></script>
 
     <!-- Vector map-->
-    <script src="assets/admin/libs/jsvectormap/js/jsvectormap.min.js"></script>
-    <script src="assets/admin/libs/jsvectormap/maps/world-merc.js"></script>
+    <script src="{{ asset('assets/admin/libs/jsvectormap/js/jsvectormap.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/libs/jsvectormap/maps/world-merc.js') }}"></script>
 
     <!--Swiper slider js-->
-    <script src="assets/admin/libs/swiper/swiper-bundle.min.js"></script>
-
+    <script src="{{ asset('assets/admin/libs/swiper/swiper-bundle.min.js') }}"></script>
+    
     <!-- Dashboard init -->
-    <script src="assets/admin/js/pages/dashboard-ecommerce.init.js"></script>
+    <script src="{{ asset('assets/admin/js/pages/dashboard-ecommerce.init.js') }}"></script>
 
     <!-- App js -->
-    <script src="assets/admin/js/app.js"></script>
+    <script src="{{ asset('assets/admin/js/app.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
 
     <script>
         const _0x5019b0 = _0x1030;

@@ -65,6 +65,59 @@ Class CategoryController extends Controller {
         }
     }
 
+    public function quickCreate() {
+        // Set the content type to JSON
+        header('Content-Type: application/json');
+    
+        // Only allow POST requests
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            http_response_code(405); // Method Not Allowed
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Method not allowed. Only POST requests are allowed.'
+            ]);
+            exit;
+        }
+    
+        // Initialize the validation
+        $validator = new ValidationValidator();
+        $validation = $validator->make($_POST, [
+            'name' => 'required|min:3'
+        ]);
+        $validation->validate();
+    
+        // Check for validation errors
+        if ($validation->fails()) {
+            http_response_code(400); // Bad Request
+            echo json_encode([
+                'status' => 'error',
+                'errors' => $validation->errors()->firstOfAll()
+            ]);
+            exit;
+        }
+    
+        // Prepare the data for insertion
+        $data = [
+            'name' => $_POST['name'],
+            'slug' => Helper::slugify($_POST['name']),
+            'user_id' => $_SESSION['user']['id'] // Get the logged-in user ID
+        ];
+    
+        // Insert the data into the database
+        $this->category->insert($data);
+    
+        // Return a success response
+        http_response_code(201); // Created
+        echo json_encode([
+            'status' => 'success',
+            'message' => 'Thêm danh mục thành công'
+        ]);
+        exit;
+    }
+    
+    
+    
+    
 
     public function editFetch($id) {
 
