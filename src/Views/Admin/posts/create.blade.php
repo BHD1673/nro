@@ -18,24 +18,8 @@
                 <h4 class="card-title mb-0 flex-grow-1">Thông tin bài viết</h4>
             </div><!-- end card header -->
 
-
-            <!-- Toast Container -->
-            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-                <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header">
-                        <strong class="me-auto">Success</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-                        New category created successfully!
-                    </div>
-                </div>
-            </div>
-
-
-
             <!-- Modal -->
-            <div class="modal fade" id="newCategoryModal" tabindex="-1" aria-labelledby="newCategoryModalLabel"
+            {{-- <div class="modal fade" id="newCategoryModal" tabindex="-1" aria-labelledby="newCategoryModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -187,7 +171,7 @@
                         }
                     });
                 });
-            </script>
+            </script> --}}
 
 
 
@@ -212,10 +196,12 @@
                                 </select>
                             </div>
                             <div class="col-sm-3">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#newCategoryModal">
                                     Thêm mới danh mục
-                                </button>
+                                </button> --}}
+
+                                <input type="text" name="post_category" id="post_category" class="form-control" placeholder="Nhập tên danh mục mới" aria-label="Danh mục bài viết">
                             </div>
 
                             <div class="col-sm-12">
@@ -260,7 +246,7 @@
             <div class="card-header align-items-center d-flex">
                 <h4 class="card-title mb-0">Nội dung bài viết</h4>
             </div><!-- end card header -->
-
+    
             <div class="card-body">
                 <!-- Snow Editor container -->
                 <div id="editor-container" style="height: 600px;"></div>
@@ -268,6 +254,7 @@
             </div><!-- end card-body -->
         </div><!-- end card -->
     </div>
+    
 
     <div class="mb-3 d-flex justify-content-center">
         <button type="reset" class="btn btn-outline-secondary me-3"
@@ -277,120 +264,63 @@
     </form>
 
 
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script>
-        document.getElementById('postForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
+<!-- Quill.js -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
-            // Get form data
-            const formData = new FormData(this);
-            let isValid = true;
+<!-- Custom CSS for placeholder text color -->
+<style>
+    .ql-snow .ql-editor.ql-blank::before {
+        color: #aaa; /* Change this to the desired placeholder color */
+    }
+</style>
 
-            // Validate required fields
-            if (!formData.get('post_title')) {
-                alert('Tiêu đề bài viết là bắt buộc.');
-                isValid = false;
-            }
-            if (!formData.get('post_status')) {
-                alert('Phải chọn lựa chọn đăng bài.');
-                isValid = false;
-            }
-            if (!formData.get('post_image').name) {
-                alert('Ảnh là bắt buộc.');
-                isValid = false;
-            }
-
-            // Get Quill content
-            var quillContent = quill.root.innerHTML;
-            document.getElementById('post_content').value = quillContent;
-
-            if (isValid) {
-                // Display form data in an alert
-                let formInfo = '';
-                formData.forEach((value, key) => {
-                    if (key === 'post_image') {
-                        formInfo += `${key}: ${value.name}\n`; // Get file name
-                    } else {
-                        formInfo += `${key}: ${value}\n`;
-                    }
-                });
-                alert(formInfo);
-
-                // Send form data via AJAX to the relative link
-                const xhr = new XMLHttpRequest();
-                xhr.open('POST', 'bai-viet/xu-ly', true);
-                xhr.setRequestHeader('X-CSRF-TOKEN', document.querySelector('input[name="_token"]').value);
-
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        // Handle response from server
-                        alert('Success: ' + xhr.responseText);
-                    } else if (xhr.readyState === 4) {
-                        // Handle error from server
-                        alert('Error: ' + xhr.responseText);
-                    }
-                };
-
-                xhr.send(formData);
-            }
-        });
-
-        // Add custom fonts to the font list
-        var Font = Quill.import('formats/font');
-        Font.whitelist = [
-            'sans-serif', 'serif', 'monospace',
-            'roboto', 'oswald', 'montserrat', 'lato', 'raleway'
-        ];
-        Quill.register(Font, true);
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
         var quill = new Quill('#editor-container', {
             theme: 'snow',
             placeholder: 'Hãy tạo ra những bài viết hay...',
             modules: {
                 toolbar: [
-                    [{
-                        'font': Font.whitelist
-                    }],
-                    [{
-                        'size': ['small', false, 'large', 'huge']
-                    }],
+                    [{'font': []}],
+                    [{'size': ['small', false, 'large', 'huge']}],
                     ['bold', 'italic', 'underline', 'strike'],
                     ['blockquote', 'code-block'],
-                    [{
-                        'header': 1
-                    }, {
-                        'header': 2
-                    }],
-                    [{
-                        'list': 'ordered'
-                    }, {
-                        'list': 'bullet'
-                    }],
-                    [{
-                        'script': 'sub'
-                    }, {
-                        'script': 'super'
-                    }],
-                    [{
-                        'indent': '-1'
-                    }, {
-                        'indent': '+1'
-                    }],
-                    [{
-                        'direction': 'rtl'
-                    }],
-                    [{
-                        'color': []
-                    }, {
-                        'background': []
-                    }],
-                    [{
-                        'align': []
-                    }],
+                    [{'header': 1}, {'header': 2}],
+                    [{'list': 'ordered'}, {'list': 'bullet'}],
+                    [{'script': 'sub'}, {'script': 'super'}],
+                    [{'indent': '-1'}, {'indent': '+1'}],
+                    [{'direction': 'rtl'}],
+                    [{'color': []}, {'background': []}],
+                    [{'align': []}],
                     ['link', 'image', 'video'],
                     ['clean']
                 ]
             }
         });
-    </script>
+
+        // Form submission event listener
+        document.getElementById('postForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get Quill content
+            var quillContent = quill.root.innerHTML;
+            document.getElementById('post_content').value = quillContent;
+
+            // Debug form with fake dd()
+            console.log(quillContent);
+            console.log('Form submitted');
+
+
+            if (!quillContent) {
+                alert('Vui lý nhập bài về');
+                return false;
+            }
+
+
+            // Submit the form
+
+        });
+    });
+</script>
 @endsection
