@@ -2,12 +2,11 @@
 
 namespace Admin\Backend\Controllers\Client;
 
-
 use Admin\Backend\Cores\Controller;
 
-Class IndexController extends Controller {
+class StarterPageController extends Controller  {
     public function index() {
 
-        $this->renderViewClient('index');
+        $this->renderViewClient('client.index');
     }
 }

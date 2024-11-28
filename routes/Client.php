@@ -2,9 +2,11 @@
 
 // Client Routes
 
-use Admin\Backend\Controllers\Admin\IndexController;
+use Admin\Backend\Controllers\Client\IndexController;
 
-$router->get('/',                                                      IndexController::class.'@index');
+$router->get('/',                                                   IndexController::class . '@index');
+// $router->get('/',                                                   'ClientController@home');
+
 // $router->get('/dang-ky',                                            'ClientController@registerForm');
 // $router->post('/dang-ky',                                           'ClientController@register');
 // $router->get('/dang-nhap',                                          'ClientController@loginForm');
@@ -20,4 +22,4 @@ $router->get('/',                                                      IndexCont
 
 // $router->get('/',                                                   function() {
 //     echo "Chưa ghép giao diện, không có gì ở đây đâu";
-// });
+// })

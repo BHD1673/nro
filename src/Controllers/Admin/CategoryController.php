@@ -4,7 +4,6 @@ namespace Admin\Backend\Controllers\Admin;
 
 use Admin\Backend\Cores\Controller;
 use Admin\Backend\Cores\Helper;
-use Admin\Backend\Cores\Request;
 use Admin\Backend\Models\Category;
 use Rakit\Validation\Validator as ValidationValidator;
 
@@ -114,9 +113,6 @@ Class CategoryController extends Controller {
         ]);
         exit;
     }
-    
-    
-    
     
 
     public function editFetch($id) {
