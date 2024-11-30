@@ -7,8 +7,8 @@
             <li><a href="{{ url('su-kien-6') }}">Sự kiện</a></li>
             <li><a href="{{ url('cam-nang-5') }}">Cẩm nang</a></li>
             <li><a href="https://www.facebook.com/ngocrongwiko" target="_blank">Fanpage</a></li>
-            <li><a href="#" style="color: yellow;">Đăng ký</a></li>
-            <li><a href="#" style="color: yellow;">Đăng nhập</a></li>
+            <li><a href="{{ url('dang-ky') }}" style="color: yellow;">Đăng ký</a></li>
+            <li><a href="{{ url('dang-nhap') }}" style="color: yellow;">Đăng nhập</a></li>
         </ul>
     </div>
 </div>

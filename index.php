@@ -1,5 +1,6 @@
 <?php 
 
+session_start();
 // PSR-4 autoloading configured. Use "namespace Admin\Backend;" in src/
 // Include the Composer autoloader with: require 'vendor/autoload.php';
 

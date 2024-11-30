@@ -11,7 +11,7 @@ class Controller
         $compiledPath = __DIR__ . '/../../dump';
 
         try {
-            $blade = new BladeOne($templatePath, $compiledPath);
+            $blade = new BladeOne($templatePath, $compiledPath, BladeONe::MODE_SLOW);
             echo $blade->run($view, $data);
         } catch (\Exception $e) {
             // Handle rendering errors
